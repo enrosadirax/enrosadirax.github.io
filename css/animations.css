@@ -1,0 +1,138 @@
+/* ============================================
+   ENROSADIRA — Animations
+   ============================================ */
+
+/* ---------- Base Animation States ---------- */
+/* Elements start hidden, GSAP reveals them */
+
+.anim-fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.anim-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.anim-reveal-right {
+  opacity: 0;
+  transform: translateX(40px);
+}
+
+.anim-card {
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.anim-step {
+  opacity: 0;
+  transform: translateX(-20px);
+}
+
+/* ---------- Delay Classes ---------- */
+.anim-delay-1 { --anim-delay: 0.15s; }
+.anim-delay-2 { --anim-delay: 0.3s; }
+.anim-delay-3 { --anim-delay: 0.45s; }
+
+/* ---------- Scroll Indicator Pulse ---------- */
+@keyframes scrollPulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+  50% {
+    opacity: 0.3;
+    transform: scaleY(0.6);
+  }
+}
+
+/* ---------- SVG Node Pulse ---------- */
+@keyframes nodePulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(201, 168, 76, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(201, 168, 76, 0);
+  }
+}
+
+.methodology__step.is-active .methodology__node {
+  animation: nodePulse 2s ease-in-out 1;
+}
+
+/* ---------- Intro SVG Rotation ---------- */
+@keyframes slowRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.intro__svg {
+  animation: slowRotate 60s linear infinite;
+}
+
+/* ---------- Hover Transitions (CSS-only) ---------- */
+.service-card {
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              box-shadow 0.4s ease,
+              border-color 0.4s ease;
+}
+
+.team-card__photo {
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.team-card:hover .team-card__photo {
+  transform: scale(1.05);
+}
+
+/* ---------- Form Focus Transitions ---------- */
+.form__input {
+  transition: border-color 0.3s ease,
+              box-shadow 0.3s ease;
+}
+
+/* ---------- Button Hover ---------- */
+.hero__cta,
+.form__submit {
+  transition: background-color 0.3s ease,
+              color 0.3s ease,
+              transform 0.3s ease,
+              border-color 0.3s ease;
+}
+
+/* ============================================
+   REDUCED MOTION
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+  /* Remove all initial animation states */
+  .anim-fade-up,
+  .anim-reveal,
+  .anim-reveal-right,
+  .anim-card,
+  .anim-step {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  /* Disable keyframe animations */
+  .hero__scroll-line,
+  .intro__svg,
+  .methodology__step.is-active .methodology__node {
+    animation: none !important;
+  }
+
+  /* Reduce transitions to instant */
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+
+  /* Keep scroll behavior smooth if OS allows */
+  html {
+    scroll-behavior: auto;
+  }
+}
