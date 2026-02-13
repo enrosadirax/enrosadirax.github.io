@@ -6,29 +6,24 @@
 (function () {
   'use strict';
 
-  // Respect reduced motion preference
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
   // ---------- Lenis Smooth Scroll ----------
   let lenis;
 
-  if (!prefersReducedMotion) {
-    lenis = new Lenis({
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      orientation: 'vertical',
-      smoothWheel: true,
-    });
+  lenis = new Lenis({
+    duration: 1.2,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    orientation: 'vertical',
+    smoothWheel: true,
+  });
 
-    // Sync Lenis with GSAP ticker
-    lenis.on('scroll', ScrollTrigger.update);
+  // Sync Lenis with GSAP ticker
+  lenis.on('scroll', ScrollTrigger.update);
 
-    gsap.ticker.add((time) => {
-      lenis.raf(time * 1000);
-    });
+  gsap.ticker.add((time) => {
+    lenis.raf(time * 1000);
+  });
 
-    gsap.ticker.lagSmoothing(0);
-  }
+  gsap.ticker.lagSmoothing(0);
 
   // Handle anchor link clicks with Lenis
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
@@ -48,17 +43,6 @@
   // ---------- Register GSAP Plugins ----------
   gsap.registerPlugin(ScrollTrigger);
 
-  // Skip all GSAP animations if reduced motion
-  if (prefersReducedMotion) {
-    // Make everything visible
-    gsap.set('.anim-fade-up, .anim-reveal, .anim-reveal-right, .anim-card, .anim-step', {
-      opacity: 1,
-      x: 0,
-      y: 0,
-    });
-    return; // Exit early — no animations
-  }
-
   // ---------- Hero Animations ----------
   // Hero text fade-in on load
   const heroTl = gsap.timeline({ delay: 0.3 });
@@ -67,27 +51,27 @@
     .to('.hero__title', {
       opacity: 1,
       y: 0,
-      duration: 1.4,
+      duration: 1,
       ease: 'power3.out',
     })
     .to('.hero__tagline', {
       opacity: 1,
       y: 0,
-      duration: 1.1,
+      duration: 0.8,
       ease: 'power3.out',
-    }, '-=0.7')
+    }, '-=0.6')
     .to('.hero__cta', {
       opacity: 1,
       y: 0,
-      duration: 1.1,
+      duration: 0.8,
       ease: 'power3.out',
-    }, '-=0.6')
+    }, '-=0.5')
     .to('.hero__scroll-indicator', {
       opacity: 1,
       y: 0,
-      duration: 0.9,
+      duration: 0.6,
       ease: 'power3.out',
-    }, '-=0.4');
+    }, '-=0.3');
 
   // Hero mountain parallax
   ScrollTrigger.matchMedia({
@@ -112,11 +96,11 @@
     gsap.to(el, {
       opacity: 1,
       y: 0,
-      duration: 1.2,
+      duration: 0.8,
       ease: 'power2.out',
       scrollTrigger: {
         trigger: el,
-        start: 'top 90%',
+        start: 'top 85%',
         toggleActions: 'play none none none',
       },
     });
@@ -127,11 +111,11 @@
     gsap.to(el, {
       opacity: 1,
       x: 0,
-      duration: 1.2,
+      duration: 0.8,
       ease: 'power2.out',
       scrollTrigger: {
         trigger: el,
-        start: 'top 90%',
+        start: 'top 85%',
         toggleActions: 'play none none none',
       },
     });
@@ -143,12 +127,12 @@
     gsap.to(serviceCards, {
       opacity: 1,
       y: 0,
-      duration: 1,
-      stagger: 0.2,
+      duration: 0.7,
+      stagger: 0.15,
       ease: 'power2.out',
       scrollTrigger: {
         trigger: '.services__grid',
-        start: 'top 85%',
+        start: 'top 80%',
         toggleActions: 'play none none none',
       },
     });
@@ -160,11 +144,11 @@
     gsap.to(step, {
       opacity: 1,
       x: 0,
-      duration: 1,
+      duration: 0.6,
       ease: 'power2.out',
       scrollTrigger: {
         trigger: step,
-        start: 'top 85%',
+        start: 'top 80%',
         toggleActions: 'play none none none',
         onEnter: () => step.classList.add('is-active'),
       },
@@ -202,12 +186,12 @@
     gsap.to(teamCards, {
       opacity: 1,
       y: 0,
-      duration: 1,
-      stagger: 0.2,
+      duration: 0.7,
+      stagger: 0.15,
       ease: 'power2.out',
       scrollTrigger: {
         trigger: '.team__grid',
-        start: 'top 85%',
+        start: 'top 80%',
         toggleActions: 'play none none none',
       },
     });
