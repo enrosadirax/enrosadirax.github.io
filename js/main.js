@@ -67,27 +67,27 @@
     .to('.hero__title', {
       opacity: 1,
       y: 0,
-      duration: 1,
+      duration: 1.4,
       ease: 'power3.out',
     })
     .to('.hero__tagline', {
       opacity: 1,
       y: 0,
-      duration: 0.8,
+      duration: 1.1,
       ease: 'power3.out',
-    }, '-=0.6')
+    }, '-=0.7')
     .to('.hero__cta', {
       opacity: 1,
       y: 0,
-      duration: 0.8,
+      duration: 1.1,
       ease: 'power3.out',
-    }, '-=0.5')
+    }, '-=0.6')
     .to('.hero__scroll-indicator', {
       opacity: 1,
       y: 0,
-      duration: 0.6,
+      duration: 0.9,
       ease: 'power3.out',
-    }, '-=0.3');
+    }, '-=0.4');
 
   // Hero mountain parallax
   ScrollTrigger.matchMedia({
@@ -112,11 +112,11 @@
     gsap.to(el, {
       opacity: 1,
       y: 0,
-      duration: 0.8,
+      duration: 1.2,
       ease: 'power2.out',
       scrollTrigger: {
         trigger: el,
-        start: 'top 85%',
+        start: 'top 90%',
         toggleActions: 'play none none none',
       },
     });
@@ -127,11 +127,11 @@
     gsap.to(el, {
       opacity: 1,
       x: 0,
-      duration: 0.8,
+      duration: 1.2,
       ease: 'power2.out',
       scrollTrigger: {
         trigger: el,
-        start: 'top 85%',
+        start: 'top 90%',
         toggleActions: 'play none none none',
       },
     });
@@ -143,12 +143,12 @@
     gsap.to(serviceCards, {
       opacity: 1,
       y: 0,
-      duration: 0.7,
-      stagger: 0.15,
+      duration: 1,
+      stagger: 0.2,
       ease: 'power2.out',
       scrollTrigger: {
         trigger: '.services__grid',
-        start: 'top 80%',
+        start: 'top 85%',
         toggleActions: 'play none none none',
       },
     });
@@ -160,11 +160,11 @@
     gsap.to(step, {
       opacity: 1,
       x: 0,
-      duration: 0.6,
+      duration: 1,
       ease: 'power2.out',
       scrollTrigger: {
         trigger: step,
-        start: 'top 80%',
+        start: 'top 85%',
         toggleActions: 'play none none none',
         onEnter: () => step.classList.add('is-active'),
       },
@@ -202,12 +202,12 @@
     gsap.to(teamCards, {
       opacity: 1,
       y: 0,
-      duration: 0.7,
-      stagger: 0.15,
+      duration: 1,
+      stagger: 0.2,
       ease: 'power2.out',
       scrollTrigger: {
         trigger: '.team__grid',
-        start: 'top 80%',
+        start: 'top 85%',
         toggleActions: 'play none none none',
       },
     });
