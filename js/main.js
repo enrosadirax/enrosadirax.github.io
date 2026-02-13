@@ -213,6 +213,64 @@
     });
   }
 
+  // ---------- Insights Horizontal Scroll ----------
+  const insightsTrack = document.getElementById('insightsTrack');
+  const insightsDots = document.querySelectorAll('.insights__dot');
+  const insightsPanels = gsap.utils.toArray('.insights__panel');
+
+  if (insightsTrack && insightsPanels.length) {
+    ScrollTrigger.matchMedia({
+      // Desktop: horizontal scroll with pin + snap
+      '(min-width: 769px)': function () {
+        var panelCount = insightsPanels.length;
+        var totalScroll = function () {
+          return insightsTrack.scrollWidth - window.innerWidth;
+        };
+
+        gsap.to(insightsTrack, {
+          x: function () { return -totalScroll(); },
+          ease: 'none',
+          scrollTrigger: {
+            trigger: '.insights__wrapper',
+            start: 'top top',
+            end: function () { return '+=' + totalScroll(); },
+            pin: true,
+            scrub: 0.5,
+            invalidateOnRefresh: true,
+            anticipatePin: 1,
+            onUpdate: function (self) {
+              var progress = self.progress;
+              var activeIndex = Math.min(
+                Math.round(progress * (panelCount - 1)),
+                panelCount - 1
+              );
+              insightsDots.forEach(function (dot, i) {
+                dot.classList.toggle('insights__dot--active', i === activeIndex);
+              });
+            },
+          },
+        });
+      },
+
+      // Mobile: vertical stack with fade-in per panel
+      '(max-width: 768px)': function () {
+        insightsPanels.forEach(function (panel) {
+          gsap.from(panel, {
+            opacity: 0,
+            y: 40,
+            duration: 0.8,
+            ease: 'power2.out',
+            scrollTrigger: {
+              trigger: panel,
+              start: 'top 85%',
+              toggleActions: 'play none none none',
+            },
+          });
+        });
+      },
+    });
+  }
+
   // ---------- Methodology Line Fill (CSS approach) ----------
   // Since we can't directly animate ::after, use a child element approach
   // Insert a fill div into the line

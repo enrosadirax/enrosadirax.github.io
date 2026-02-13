@@ -131,6 +131,26 @@
     animation-iteration-count: 1 !important;
   }
 
+  /* Insights: force vertical column layout */
+  .insights__track {
+    flex-direction: column !important;
+    transform: none !important;
+  }
+
+  .insights__panel {
+    flex: 0 0 auto !important;
+    min-height: auto !important;
+    opacity: 1 !important;
+  }
+
+  .insights__wrapper {
+    overflow: visible !important;
+  }
+
+  .insights__progress {
+    display: none !important;
+  }
+
   /* Keep scroll behavior smooth if OS allows */
   html {
     scroll-behavior: auto;
