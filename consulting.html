@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Enrosadira Consulting — Real questions we answer for Dolomite hospitality. Pricing, promotions, marketing attribution, staffing, and more.">
+  <meta name="theme-color" content="#0a0a0f">
+  <title>Consulting — Enrosadira</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* ---------- Consulting Page ---------- */
+    .consult-hero {
+      padding: calc(var(--nav-height) + 80px) 0 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .consult-hero__badge {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent-gold);
+      border: 1px solid var(--accent-gold);
+      border-radius: 20px;
+      padding: 6px 18px;
+      margin-bottom: 28px;
+    }
+
+    .consult-hero__title {
+      font-family: var(--font-heading);
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .consult-hero__title span {
+      color: var(--accent-gold);
+    }
+
+    .consult-hero__sub {
+      color: var(--text-secondary);
+      font-size: clamp(1rem, 2vw, 1.15rem);
+      max-width: 580px;
+      margin: 0 auto 40px;
+      line-height: 1.7;
+    }
+
+    .consult-hero__actions {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .consult-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 32px;
+      font-size: 0.825rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    }
+
+    .consult-btn--primary {
+      background-color: var(--accent-gold);
+      color: var(--bg-primary);
+      border: 1px solid var(--accent-gold);
+    }
+
+    .consult-btn--primary:hover {
+      background-color: transparent;
+      color: var(--accent-gold);
+      transform: translateY(-2px);
+    }
+
+    .consult-btn--ghost {
+      background-color: transparent;
+      color: var(--text-primary);
+      border: 1px solid var(--border);
+    }
+
+    .consult-btn--ghost:hover {
+      border-color: var(--accent-gold);
+      color: var(--accent-gold);
+      transform: translateY(-2px);
+    }
+
+    /* ---------- Stats Strip ---------- */
+    .consult-stats {
+      padding: 60px 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .consult-stats__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+      text-align: center;
+    }
+
+    .consult-stats__number {
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      font-weight: 700;
+      color: var(--accent-gold);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .consult-stats__label {
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+    }
+
+    /* ---------- Intro ---------- */
+    .consult-intro {
+      padding: 80px 0;
+    }
+
+    .consult-intro__text {
+      max-width: 720px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .consult-intro__paragraph {
+      color: var(--text-secondary);
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    .consult-intro__lead {
+      color: var(--text-primary);
+      font-weight: 500;
+      font-size: 1.1rem;
+      margin-top: 24px;
+    }
+
+    /* ---------- Scenario Cards ---------- */
+    .consult-scenarios {
+      padding: 100px 0;
+    }
+
+    .consult-scenarios__grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+      margin-top: 64px;
+    }
+
+    .consult-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 40px 32px;
+      transition: border-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .consult-card:hover {
+      border-color: var(--accent-gold);
+      transform: translateY(-4px);
+    }
+
+    .consult-card__number {
+      font-family: var(--font-heading);
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      opacity: 0.08;
+      line-height: 1;
+      margin-bottom: -4px;
+    }
+
+    .consult-card__title {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+    }
+
+    .consult-card__question {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .consult-card__divider {
+      width: 40px;
+      height: 2px;
+      background-color: var(--accent-gold);
+      margin-bottom: 20px;
+      opacity: 0.6;
+    }
+
+    .consult-card__answer {
+      color: var(--text-primary);
+      font-size: 0.95rem;
+      font-weight: 400;
+      line-height: 1.7;
+    }
+
+    /* ---------- Bottom CTA ---------- */
+    .consult-cta {
+      padding: 100px 0;
+      text-align: center;
+    }
+
+    .consult-cta__title {
+      font-family: var(--font-heading);
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+    }
+
+    .consult-cta__sub {
+      color: var(--text-secondary);
+      font-size: 1.05rem;
+      max-width: 480px;
+      margin: 0 auto 36px;
+    }
+
+    /* ---------- Back link ---------- */
+    .consult-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--accent-gold);
+      font-size: 0.875rem;
+      letter-spacing: 0.05em;
+      padding: calc(var(--nav-height) + 24px) 0 0;
+    }
+
+    .consult-back:hover {
+      color: var(--accent-hover);
+    }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 768px) {
+      .consult-scenarios__grid {
+        grid-template-columns: 1fr;
+      }
+
+      .consult-stats__grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .consult-hero {
+        padding-top: calc(var(--nav-height) + 48px);
+      }
+
+      .consult-card {
+        padding: 28px 24px;
+      }
+
+      .consult-scenarios {
+        padding: 64px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== NAVIGATION ========== -->
+  <header class="nav nav--scrolled">
+    <div class="nav__container">
+      <a href="index.html#hero" class="nav__logo">ENROSADIRA</a>
+      <nav class="nav__links" id="navLinks">
+        <a href="index.html#services" class="nav__link">Services</a>
+        <a href="index.html#insights" class="nav__link">Insights</a>
+        <a href="index.html#approach" class="nav__link">Approach</a>
+        <a href="products.html" class="nav__link">Products</a>
+        <a href="index.html#contact" class="nav__link">Contact</a>
+      </nav>
+      <div class="nav__right">
+        <button class="nav__hamburger" id="navHamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========== BACK LINK ========== -->
+  <div class="container">
+    <a href="index.html" class="consult-back">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
+      Back to Enrosadira
+    </a>
+  </div>
+
+  <!-- ========== HERO ========== -->
+  <section class="consult-hero">
+    <div class="container">
+      <span class="consult-hero__badge">Enrosadira Consulting</span>
+      <h1 class="consult-hero__title">The questions that<br><span>actually matter</span></h1>
+      <p class="consult-hero__sub">Revenue went up, costs went down, bookings climbed &mdash; but was it your decision or the market? We separate signal from noise so you know exactly what works.</p>
+      <div class="consult-hero__actions">
+        <a href="#scenarios" class="consult-btn consult-btn--primary">See Examples</a>
+        <a href="index.html#contact" class="consult-btn consult-btn--ghost">Start a Conversation</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== STATS ========== -->
+  <section class="consult-stats">
+    <div class="container">
+      <div class="consult-stats__grid">
+        <div>
+          <div class="consult-stats__number">6</div>
+          <p class="consult-stats__label">Core consulting scenarios</p>
+        </div>
+        <div>
+          <div class="consult-stats__number">100%</div>
+          <p class="consult-stats__label">Evidence-based recommendations</p>
+        </div>
+        <div>
+          <div class="consult-stats__number">0</div>
+          <p class="consult-stats__label">Decisions left to guesswork</p>
+        </div>
+        <div>
+          <div class="consult-stats__number">1:1</div>
+          <p class="consult-stats__label">Tailored to your property</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== INTRO ========== -->
+  <section class="consult-intro">
+    <div class="container">
+      <div class="consult-intro__text">
+        <p class="consult-intro__paragraph">Every hospitality business makes decisions under uncertainty. Prices change, promotions launch, staff levels shift &mdash; and the numbers move. The hard part is knowing whether your decision caused the result, or whether the market would have moved anyway.</p>
+        <p class="consult-intro__paragraph">We apply the methods of causal economics to isolate the true impact of each choice, so you act on evidence rather than intuition.</p>
+        <p class="consult-intro__lead">Here are six real scenarios we work on with clients.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SCENARIO CARDS ========== -->
+  <section class="consult-scenarios section--alt" id="scenarios">
+    <div class="container">
+      <h2 class="section__heading section__heading--center">Real Questions, Real Answers</h2>
+      <p class="section__subheading">Each scenario below is a pattern we see across Dolomite hospitality &mdash; and the kind of analysis we deliver</p>
+
+      <div class="consult-scenarios__grid">
+
+        <!-- Card 01 -->
+        <div class="consult-card">
+          <span class="consult-card__number">01</span>
+          <h3 class="consult-card__title">Beverage Pricing</h3>
+          <p class="consult-card__question">A restaurant raises the price of bottled water by one euro and orders drop. But that same month brought fewer tourists to the valley. Was it the price change, or the quieter season?</p>
+          <div class="consult-card__divider"></div>
+          <p class="consult-card__answer">We measure the actual causal impact of the pricing decision &mdash; separating what you control from what the market did on its own.</p>
+        </div>
+
+        <!-- Card 02 -->
+        <div class="consult-card">
+          <span class="consult-card__number">02</span>
+          <h3 class="consult-card__title">In-House Dining</h3>
+          <p class="consult-card__question">A hotel offers dining discounts to get guests eating in-house instead of down the road. Covers go up. But is the discount actually shifting behaviour, or were guests already staying in?</p>
+          <div class="consult-card__divider"></div>
+          <p class="consult-card__answer">We design and evaluate the experiment to determine whether the promotion drives incremental revenue &mdash; so you stop guessing and start optimising.</p>
+        </div>
+
+        <!-- Card 03 -->
+        <div class="consult-card">
+          <span class="consult-card__number">03</span>
+          <h3 class="consult-card__title">Marketing Attribution</h3>
+          <p class="consult-card__question">You doubled your ad budget and bookings went up. But so did tourist arrivals across the whole valley, and a new direct flight opened from Munich. How much of the lift was actually your spend?</p>
+          <div class="consult-card__divider"></div>
+          <p class="consult-card__answer">We separate what your marketing spend delivered from what the market brought for free &mdash; so every euro is traceable to an outcome.</p>
+        </div>
+
+        <!-- Card 04 -->
+        <div class="consult-card">
+          <span class="consult-card__number">04</span>
+          <h3 class="consult-card__title">Seasonal Staffing</h3>
+          <p class="consult-card__question">You cut housekeeping hours in shoulder season and review scores dipped. But scores always dip in shoulder season when the mix of guests changes. Was it the staffing cut or the seasonal pattern?</p>
+          <div class="consult-card__divider"></div>
+          <p class="consult-card__answer">We isolate the staffing effect from the seasonal baseline so you set the right level &mdash; without overspending or risking reviews.</p>
+        </div>
+
+        <!-- Card 05 -->
+        <div class="consult-card">
+          <span class="consult-card__number">05</span>
+          <h3 class="consult-card__title">Loyalty Programme</h3>
+          <p class="consult-card__question">You introduced a returning-guest discount and repeat bookings rose 18%. But repeat bookings were already trending upward before the programme launched. How much of the increase is actually the discount?</p>
+          <div class="consult-card__divider"></div>
+          <p class="consult-card__answer">We measure the programme's true incremental impact &mdash; accounting for the pre-existing trend so you know what the discount is really worth.</p>
+        </div>
+
+        <!-- Card 06 -->
+        <div class="consult-card">
+          <span class="consult-card__number">06</span>
+          <h3 class="consult-card__title">Spa &amp; Wellness Upsell</h3>
+          <p class="consult-card__question">You started offering spa packages at check-in and wellness revenue climbed. But the spa was also renovated last quarter. Is the revenue lift from the upsell pitch or the new facilities?</p>
+          <div class="consult-card__divider"></div>
+          <p class="consult-card__answer">We untangle the upsell pitch from the renovation effect &mdash; so you know which investment is actually driving the return.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== BOTTOM CTA ========== -->
+  <section class="consult-cta">
+    <div class="container">
+      <h2 class="consult-cta__title">Have a question like these?</h2>
+      <p class="consult-cta__sub">Every property has decisions that deserve better evidence. Tell us yours and we'll show you what the data can reveal.</p>
+      <a href="index.html#contact" class="consult-btn consult-btn--primary">Start a Conversation</a>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <span class="footer__logo">ENROSADIRA</span>
+          <p class="footer__tagline">Hospitality intelligence for the Dolomites</p>
+        </div>
+        <div class="footer__contact">
+          <p>Bolzano, South Tyrol</p>
+          <p>39100 (BZ), Italy</p>
+          <p><a href="mailto:info@enrosadira.com">info@enrosadira.com</a></p>
+        </div>
+        <div class="footer__links">
+          <a href="legal.html#privacy">Privacy Policy</a>
+          <a href="legal.html#impressum">Impressum</a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <div class="footer__lang">
+          <span class="footer__lang-active">EN</span>
+          <span class="footer__lang-sep">/</span>
+          <span class="footer__lang-item">IT</span>
+          <span class="footer__lang-sep">/</span>
+          <span class="footer__lang-item">DE</span>
+        </div>
+        <p class="footer__copy">&copy; 2026 Enrosadira. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Minimal JS for hamburger on consulting page -->
+  <script>
+    (function () {
+      var btn = document.getElementById('navHamburger');
+      var links = document.getElementById('navLinks');
+      if (!btn || !links) return;
+      btn.addEventListener('click', function () {
+        var open = btn.classList.toggle('nav__hamburger--open');
+        links.classList.toggle('nav__links--open', open);
+        btn.setAttribute('aria-expanded', open);
+      });
+      links.querySelectorAll('a').forEach(function (a) {
+        a.addEventListener('click', function () {
+          btn.classList.remove('nav__hamburger--open');
+          links.classList.remove('nav__links--open');
+          btn.setAttribute('aria-expanded', 'false');
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
