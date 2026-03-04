@@ -91,10 +91,29 @@
     submitText.hidden = true;
     submitLoading.hidden = false;
 
+    const actionUrl = (form.getAttribute('action') || '').trim();
+    if (!actionUrl) {
+      const subject = encodeURIComponent('Website inquiry');
+      const lines = [
+        'Name: ' + (fields.name.el.value || ''),
+        'Email: ' + (fields.email.el.value || ''),
+        'Company: ' + (document.getElementById('company').value || ''),
+        '',
+        (fields.message.el.value || ''),
+      ];
+      const body = encodeURIComponent(lines.join('\n'));
+
+      submitLoading.hidden = true;
+      submitText.hidden = false;
+      submitBtn.disabled = false;
+      window.location.href = 'mailto:info.enrosadira@gmail.com?subject=' + subject + '&body=' + body;
+      return;
+    }
+
     try {
       const formData = new FormData(form);
 
-      const response = await fetch(form.action, {
+      const response = await fetch(actionUrl, {
         method: 'POST',
         body: formData,
         headers: {

@@ -202,7 +202,6 @@
     'Markets evolve, and so do our strategies. We continuously monitor performance, refine models, and adapt recommendations to ensure sustained results across seasons.': 'I mercati evolvono, e cosi fanno le nostre strategie. Monitoriamo costantemente le performance, aggiorniamo i modelli e adattiamo le raccomandazioni per garantire risultati nel tempo.',
     'The Team': 'Il team',
     'Economists and analysts rooted in South Tyrol, with international expertise': 'Economisti e analisti radicati in Alto Adige, con esperienza internazionale',
-    'Name Placeholder': 'Nome segnaposto',
     'Founding Partner & Lead Economist': 'Partner fondatore e capo economista',
     'Data Analyst & Econometrician': 'Data analyst ed econometrico',
     'Marketing Strategist': 'Stratega marketing',
@@ -226,7 +225,6 @@
     'Markets evolve, and so do our strategies. We continuously monitor performance, refine models, and adapt recommendations to ensure sustained results across seasons.': 'Maerkte veraendern sich — unsere Strategien auch. Wir ueberwachen kontinuierlich die Performance, verfeinern Modelle und passen Empfehlungen an, um nachhaltige Ergebnisse ueber alle Saisons sicherzustellen.',
     'The Team': 'Das Team',
     'Economists and analysts rooted in South Tyrol, with international expertise': 'Oekonomen und Analysten mit Wurzeln in Suedtirol und internationaler Expertise',
-    'Name Placeholder': 'Namensplatzhalter',
     'Founding Partner & Lead Economist': 'Gruendungspartner und Lead-Economist',
     'Data Analyst & Econometrician': 'Data-Analyst und Oekonometriker',
     'Marketing Strategist': 'Marketingstratege',
@@ -447,7 +445,7 @@
 
   Object.assign(translations.it, {
     '1. Data Controller': '1. Titolare del trattamento',
-    'Enrosadira S.r.l. (placeholder), Via Placeholder 1, 39100 Bolzano (BZ), Italy. Email: info.enrosadira@gmail.com': 'Enrosadira S.r.l. (placeholder), Via Placeholder 1, 39100 Bolzano (BZ), Italia. Email: info.enrosadira@gmail.com',
+    'Enrosadira, 39100 Bolzano (BZ), Italy. Email: info.enrosadira@gmail.com': 'Enrosadira, 39100 Bolzano (BZ), Italia. Email: info.enrosadira@gmail.com',
     '2. Data Collected': '2. Dati raccolti',
     'When you use our contact form, we collect: your name, email address, company name (optional), and message content. This data is processed by Formspree, Inc. acting as a data processor on our behalf.': 'Quando usi il modulo di contatto raccogliamo: nome, indirizzo email, nome azienda (opzionale) e contenuto del messaggio. Questi dati sono trattati da Formspree, Inc. in qualita di responsabile del trattamento per nostro conto.',
     '3. Purpose of Processing': '3. Finalita del trattamento',
@@ -470,12 +468,6 @@
     'Company Information': 'Informazioni societarie',
     'Italy': 'Italia',
     'Phone: +39 0471 000 000': 'Telefono: +39 0471 000 000',
-    'Registration': 'Registrazione',
-    'Registered at: Camera di Commercio di Bolzano (placeholder)': 'Registrata presso: Camera di Commercio di Bolzano (placeholder)',
-    'VAT Number: IT00000000000 (placeholder)': 'Partita IVA: IT00000000000 (placeholder)',
-    'Codice Fiscale: 00000000000 (placeholder)': 'Codice fiscale: 00000000000 (placeholder)',
-    'Responsible for Content': 'Responsabile dei contenuti',
-    'Name Placeholder, Managing Director': 'Nome segnaposto, amministratore delegato',
     'Dispute Resolution': 'Risoluzione delle controversie',
     'The European Commission provides a platform for online dispute resolution (ODR):': 'La Commissione europea mette a disposizione una piattaforma per la risoluzione online delle controversie (ODR):',
     '. We are not obligated and not willing to participate in dispute resolution proceedings before a consumer arbitration board.': '. Non siamo obbligati ne disponibili a partecipare a procedure di risoluzione delle controversie davanti a un organismo di arbitrato per i consumatori.'
@@ -483,7 +475,7 @@
 
   Object.assign(translations.de, {
     '1. Data Controller': '1. Verantwortlicher',
-    'Enrosadira S.r.l. (placeholder), Via Placeholder 1, 39100 Bolzano (BZ), Italy. Email: info.enrosadira@gmail.com': 'Enrosadira S.r.l. (placeholder), Via Placeholder 1, 39100 Bolzano (BZ), Italien. E-Mail: info.enrosadira@gmail.com',
+    'Enrosadira, 39100 Bolzano (BZ), Italy. Email: info.enrosadira@gmail.com': 'Enrosadira, 39100 Bozen (BZ), Italien. E-Mail: info.enrosadira@gmail.com',
     '2. Data Collected': '2. Erhobene Daten',
     'When you use our contact form, we collect: your name, email address, company name (optional), and message content. This data is processed by Formspree, Inc. acting as a data processor on our behalf.': 'Wenn Sie unser Kontaktformular nutzen, erfassen wir: Ihren Namen, Ihre E-Mail-Adresse, den Firmennamen (optional) und den Nachrichteninhalt. Diese Daten werden von Formspree, Inc. als Auftragsverarbeiter in unserem Auftrag verarbeitet.',
     '3. Purpose of Processing': '3. Zweck der Verarbeitung',
@@ -506,12 +498,6 @@
     'Company Information': 'Unternehmensangaben',
     'Italy': 'Italien',
     'Phone: +39 0471 000 000': 'Telefon: +39 0471 000 000',
-    'Registration': 'Registrierung',
-    'Registered at: Camera di Commercio di Bolzano (placeholder)': 'Eingetragen bei: Camera di Commercio di Bolzano (placeholder)',
-    'VAT Number: IT00000000000 (placeholder)': 'USt-IdNr.: IT00000000000 (placeholder)',
-    'Codice Fiscale: 00000000000 (placeholder)': 'Steuernummer: 00000000000 (placeholder)',
-    'Responsible for Content': 'Inhaltlich verantwortlich',
-    'Name Placeholder, Managing Director': 'Namensplatzhalter, Geschaeftsfuehrer',
     'Dispute Resolution': 'Streitbeilegung',
     'The European Commission provides a platform for online dispute resolution (ODR):': 'Die Europaeische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:',
     '. We are not obligated and not willing to participate in dispute resolution proceedings before a consumer arbitration board.': '. Wir sind weder verpflichtet noch bereit, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.'
