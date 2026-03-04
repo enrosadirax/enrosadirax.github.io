@@ -200,6 +200,7 @@ ul, ol {
 .nav__lang-active {
   color: var(--accent-gold);
   font-weight: 500;
+  cursor: pointer;
 }
 
 .nav__lang-item {
@@ -895,6 +896,7 @@ ul, ol {
 .footer__lang-active {
   color: var(--accent-gold);
   font-weight: 500;
+  cursor: pointer;
 }
 
 .footer__lang-item {
@@ -904,6 +906,14 @@ ul, ol {
 
 .footer__lang-item:hover {
   color: var(--text-primary);
+}
+
+.nav__lang-active:focus-visible,
+.nav__lang-item:focus-visible,
+.footer__lang-active:focus-visible,
+.footer__lang-item:focus-visible {
+  outline: 1px solid var(--accent-gold);
+  outline-offset: 2px;
 }
 
 .footer__lang-sep {

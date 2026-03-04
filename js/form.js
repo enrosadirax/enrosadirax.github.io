@@ -9,13 +9,19 @@
   const form = document.getElementById('contactForm');
   if (!form) return;
 
+  function t(englishText) {
+    return (window.enrosadiraI18n && window.enrosadiraI18n.translateText)
+      ? window.enrosadiraI18n.translateText(englishText)
+      : englishText;
+  }
+
   const fields = {
     name: {
       el: document.getElementById('name'),
       error: document.getElementById('nameError'),
       validate(value) {
-        if (!value.trim()) return 'Please enter your name.';
-        if (value.trim().length < 2) return 'Name must be at least 2 characters.';
+        if (!value.trim()) return t('Please enter your name.');
+        if (value.trim().length < 2) return t('Name must be at least 2 characters.');
         return '';
       },
     },
@@ -23,10 +29,10 @@
       el: document.getElementById('email'),
       error: document.getElementById('emailError'),
       validate(value) {
-        if (!value.trim()) return 'Please enter your email.';
+        if (!value.trim()) return t('Please enter your email.');
         // Basic email pattern
         const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!pattern.test(value.trim())) return 'Please enter a valid email address.';
+        if (!pattern.test(value.trim())) return t('Please enter a valid email address.');
         return '';
       },
     },
@@ -34,8 +40,8 @@
       el: document.getElementById('message'),
       error: document.getElementById('messageError'),
       validate(value) {
-        if (!value.trim()) return 'Please enter a message.';
-        if (value.trim().length < 10) return 'Message must be at least 10 characters.';
+        if (!value.trim()) return t('Please enter a message.');
+        if (value.trim().length < 10) return t('Message must be at least 10 characters.');
         return '';
       },
     },
@@ -115,11 +121,11 @@
       // Show error state
       submitLoading.hidden = true;
       submitText.hidden = false;
-      submitText.textContent = 'Error — try again';
+      submitText.textContent = t('Error — try again');
       submitBtn.disabled = false;
 
       setTimeout(() => {
-        submitText.textContent = 'Send Message';
+        submitText.textContent = t('Send Message');
       }, 3000);
     }
   });

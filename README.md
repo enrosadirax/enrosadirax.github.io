@@ -32,7 +32,8 @@ consulting/
 ├── js/
 │   ├── main.js             # GSAP + Lenis + scroll animations
 │   ├── nav.js              # Header, scroll spy, mobile menu
-│   └── form.js             # Contact form validation
+│   ├── form.js             # Contact form validation
+│   └── i18n.js             # Manual EN/IT/DE translations + language detection
 └── assets/
     └── images/
         └── mountain-silhouette.svg
@@ -44,6 +45,12 @@ consulting/
 - **Contact info**: Update email, phone, and address placeholders
 - **Team**: Replace placeholder names and add real photos
 - **Legal**: Fill in actual company registration details
+
+## Localization
+
+- The site supports manual `en` (source), `it`, and `de` translations via `js/i18n.js`.
+- Source-of-truth language for content is **English**.
+- For bots/crawlers/automation: treat English text as canonical and other languages as derived translations.
 
 ## Browser Support
 
