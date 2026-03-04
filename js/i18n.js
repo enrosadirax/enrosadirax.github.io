@@ -517,6 +517,61 @@
     '. We are not obligated and not willing to participate in dispute resolution proceedings before a consumer arbitration board.': '. Wir sind weder verpflichtet noch bereit, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.'
   });
 
+  // Copy-edit pass: more native marketing tone for IT/DE.
+  Object.assign(translations.it, {
+    'Data-driven hospitality intelligence for the Dolomites': "Intelligenza per l'ospitalita nelle Dolomiti, guidata dai dati",
+    'Discover Our Approach': 'Scopri il metodo',
+    'Economics, not guesswork': 'Economia, non intuizioni',
+    'Automation Processes': 'Automazione operativa',
+    'Market Insights': 'Analisi di mercato',
+    'Cost Optimization & Strategic Consulting': 'Ottimizzazione costi e consulenza strategica',
+    'Explore Products': 'Scopri i prodotti',
+    'See Examples': 'Guarda gli esempi',
+    'Our Approach': 'Il nostro metodo',
+    'Rooted in the Dolomites': 'Nati nelle Dolomiti',
+    'Start the Conversation': 'Parliamone',
+    "Ready to make data-driven decisions? Whether you're exploring a new market, questioning your marketing ROI, or planning next season's strategy — we'd like to hear from you.": 'Pronto a decidere con i dati? Che tu stia aprendo un nuovo mercato, rivedendo il ROI del marketing o pianificando la prossima stagione, scrivici.',
+    'Start a Conversation': 'Parliamo del tuo progetto',
+    'The questions that': 'Le domande che',
+    'actually matter': 'fanno la differenza',
+    'Core consulting scenarios': 'Scenari chiave di consulenza',
+    'Real Questions, Real Answers': 'Domande concrete, risposte concrete',
+    'Beverage Pricing': 'Pricing beverage',
+    'Seasonal Staffing': 'Organico stagionale',
+    'Have a question like these?': 'Hai una domanda simile?',
+    'Hospitality automation,': 'Automazione hospitality,',
+    'engineered': 'progettata per performare',
+    'View Plans': 'Scopri i piani',
+    'Request a Demo': 'Richiedi una demo',
+    'Simple, transparent pricing': 'Prezzi chiari e trasparenti',
+    'Contact Sales': 'Contatta il team vendite',
+    'Ready to automate your front desk?': 'Vuoi automatizzare il front desk?',
+    'Book a 20-minute demo and see the platform running with your own property data.': 'Prenota una demo da 20 minuti e guarda la piattaforma in azione con i dati della tua struttura.'
+  });
+
+  Object.assign(translations.de, {
+    'Discover Our Approach': 'Unseren Ansatz ansehen',
+    'Automation Processes': 'Prozessautomatisierung',
+    'Market Insights': 'Marktanalysen',
+    'Cost Optimization & Strategic Consulting': 'Kostenoptimierung und Strategieberatung',
+    'Our Approach': 'Unser Vorgehen',
+    'Rooted in the Dolomites': 'In den Dolomiten verwurzelt',
+    'Start the Conversation': 'Lassen Sie uns sprechen',
+    "Ready to make data-driven decisions? Whether you're exploring a new market, questioning your marketing ROI, or planning next season's strategy — we'd like to hear from you.": 'Bereit fuer datenbasierte Entscheidungen? Egal ob neuer Markt, Marketing-ROI oder naechste Saisonstrategie: Schreiben Sie uns.',
+    'Start a Conversation': 'Gespraech vereinbaren',
+    'Core consulting scenarios': 'Zentrale Beratungsszenarien',
+    'Real Questions, Real Answers': 'Echte Fragen, klare Antworten',
+    'Beverage Pricing': 'Getraenkepreise',
+    'Seasonal Staffing': 'Saisonale Personaleinsatzplanung',
+    'Have a question like these?': 'Haben Sie eine aehnliche Frage?',
+    'Hospitality automation,': 'Hospitality-Automatisierung,',
+    'engineered': 'praezise umgesetzt',
+    'View Plans': 'Pakete ansehen',
+    'Request a Demo': 'Demo buchen',
+    'Contact Sales': 'Vertrieb kontaktieren',
+    'Book a 20-minute demo and see the platform running with your own property data.': 'Buchen Sie eine 20-Minuten-Demo und sehen Sie die Plattform mit Ihren eigenen Betriebsdaten live.'
+  });
+
   function normalizeText(value) {
     return (value || '').replace(/\s+/g, ' ').trim();
   }
