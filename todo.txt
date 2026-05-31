@@ -1,0 +1,23 @@
+ENROSADIRA — Setup To-Do
+========================
+
+[ ] Buy domain: enrosadira.com on Cloudflare (~$10/year)
+    - dash.cloudflare.com > Domain Registration > Register Domain
+
+[ ] Set up email routing (free)
+    - Cloudflare dashboard > enrosadira.com > Email > Email Routing
+    - Add rule: info@enrosadira.com → your personal email
+    - Verify destination email via link Cloudflare sends
+
+[ ] Configure Gmail "Send as"
+    - Gmail > Settings > Accounts and Import > Send mail as > Add another email address
+    - Enter: info@enrosadira.com
+    - SMTP server: smtp.gmail.com, port 587
+    - Username: your Gmail address
+    - Password: Gmail App Password (myaccount.google.com > Security > App passwords)
+    - Verify with code sent to your inbox
+
+[ ] Point domain to GitHub Pages
+    - Cloudflare DNS: add CNAME record — enrosadira.com → enrosadirax.github.io
+    - GitHub repo settings > Pages > Custom domain > enrosadira.com
+    - Enable "Enforce HTTPS"

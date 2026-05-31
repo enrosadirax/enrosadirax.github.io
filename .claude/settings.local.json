@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git ls-tree:*)",
+      "WebSearch",
+      "Bash(python:*)",
+      "WebFetch(domain:enrosadirax.github.io)",
+      "Bash(gh api:*)"
+    ]
+  }
+}
